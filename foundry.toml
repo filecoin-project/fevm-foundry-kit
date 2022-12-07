@@ -1,0 +1,12 @@
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+remappings = [
+    "@ds-test/=lib/ds-test/src/",
+    "@solmate/=lib/solmate/src/",
+    "@forge-std/=lib/forge-std/src/",
+    "@oz/=lib/oz/contracts/"
+]
+rpc_endpoints = { wallaby = '${WALLABY_RPC_URL}' }
+fuzz_runs = 256
