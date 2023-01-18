@@ -16,6 +16,7 @@ Before you run scripts, remember to
 ```
 source .env
 ```
+As well as to add the `--gas-estimate-multiplier` flag to multiply the default gas price. Alternatively, set a manual gas price with the `--gas-price` flag.
 
 ## What's Included
 
