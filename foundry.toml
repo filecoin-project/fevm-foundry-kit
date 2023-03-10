@@ -10,3 +10,6 @@ remappings = [
 ]
 rpc_endpoints = { hyperspace = '${HYPERSPACE_RPC_URL}' }
 fuzz_runs = 256
+
+[profile.default.optimizer_details]
+yul = false
