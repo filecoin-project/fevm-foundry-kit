@@ -2,3 +2,4 @@
 @solmate/=lib/solmate/src/
 @forge-std/=lib/forge-std/src/
 @oz/=lib/oz/contracts/
+@zondax/=node_modules/@zondax/
