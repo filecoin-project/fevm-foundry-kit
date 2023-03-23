@@ -11,6 +11,8 @@ contract MyScript is Script {
 
         SimpleCoin coin = new SimpleCoin();
 
+        // Do whatever you want!
+
         vm.stopBroadcast();
     }
 }
