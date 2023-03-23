@@ -24,8 +24,21 @@ You can get a private key from a wallet provider [such as Metamask](https://meta
 
 Add your private key as an environment variable by running this command:
 
- ```
+```
 export PRIVATE_KEY='abcdef'
+```
+
+Alternatively, to avoid having to do that every time, create a .env file in the root directory of the project (you can use .env.example to do so easily) and add the following line:
+
+```
+PRIVATE_KEY=abcdef
+HYPERSPACE_RPC_URL=https://api.hyperspace.node.glif.io/rpc/v1
+```
+
+and then, do the following in the terminal:
+
+```
+source .env
 ```
 
 If you use a .env file, don't commit and push any changes to .env files that may contain sensitive information, such as a private key! If this information reaches a public GitHub repository, someone can use it to check if you have any Mainnet funds in that wallet address, and steal them!
