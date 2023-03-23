@@ -47,11 +47,11 @@ Currently there are 2 main types of contracts:
 * Basic Deal Client: A contract that demos how to create Filecoin storage deals within Solidity smart contracts. See below to learn more.
 
 
-Type in the following command in the terminal to deploy any of the contracts:
+Type in the following command in the terminal to deploy a contract. Keep in mind that you can swap out the contract path and name for whichever one of your choosing:
 
  ```
 forge build
-forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY src/client-contract/DealClient.sol:DealClient
+forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
 ```
 
 ## Interact with the Contracts
