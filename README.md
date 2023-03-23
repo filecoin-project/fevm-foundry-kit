@@ -62,9 +62,23 @@ Currently there are 2 main types of contracts:
 
 Type in the following command in the terminal to deploy a contract. Keep in mind that you can swap out the contract path and name for whichever one of your choosing:
 
- ```
+```
 forge build
 forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
+```
+
+This will deploy the SimpleCoin contract to the Hyperspace testnet. You can find the contract address in the terminal output:
+
+```
+Deployer: 0x42C930A33280a7218bc924732d67dd84D6247Af4
+Deployed to: 0x859723aA05F8B0C10215C31E50d9647AD7c82C82
+Transaction hash: 0x74071603994339f01b745e304c10f1bd97cfba4003d7a447977de1c89b478c7d
+```
+
+Now try doing the smae with the Deal Client:
+
+```
+forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
 ```
 
 ## Interact with the Contracts
