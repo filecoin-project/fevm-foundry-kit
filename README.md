@@ -2,6 +2,10 @@
 
 This is a template for foundry that provides the basic scaffolding for quickly getting started with new projects. 
 
+## Download Foundry
+
+You can find the instructions to download Foundry in the [official Foundry repo](https://github.com/foundry-rs/foundry#installation). 
+
 ## Cloning the Repo
 
 Open up your terminal (or command prompt) and navigate to a directory you would like to store this code on. Once there type in the following command:
@@ -35,7 +39,7 @@ PRIVATE_KEY=abcdef
 HYPERSPACE_RPC_URL=https://api.hyperspace.node.glif.io/rpc/v1
 ```
 
-and then, do the following in the terminal:
+and then, open a new terminal and run the following command:
 
 ```
 source .env
