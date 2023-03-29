@@ -85,6 +85,18 @@ Now try doing the smae with the Deal Client:
 forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
 ```
 
+A common issue that you may see is a failure due to gas:
+
+```
+(code: 1, message: verify msg failed: message will not be included in a block: 'GasLimit' field cannot be less than the cost of storing a message on chain 152605 < 288863, data: None)
+```
+
+Simply pass in a higher gas limit to fix this (either via. a higher gas estimate multiplier or a fixed gas limit):
+
+```
+forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient -g 1000
+```
+
 ## Interact with the Contracts
 
 You can interact with contracts via forge scripts scripts, found in the 'scripts' folder. For example, to interact with the SimpleCoin contract:
