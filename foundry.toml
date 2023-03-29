@@ -9,6 +9,7 @@ remappings = [
     "@oz/=lib/oz/contracts/"
 ]
 rpc_endpoints = { hyperspace = '${HYPERSPACE_RPC_URL}' }
+chain_id = 3141
 fuzz_runs = 256
 optimizer = true
 
