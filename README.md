@@ -106,6 +106,7 @@ Type in the following command in the terminal:
 ```
 forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --verify -vvvv
 ```
+You can also interact with contracts via the terminal/command line using the [Foundry cast tool](https://book.getfoundry.sh/cast/#overview-of-cast).
 
 ## Filecoin APIs
 
