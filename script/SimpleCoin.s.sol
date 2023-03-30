@@ -2,7 +2,7 @@
 pragma solidity ^0.8.11;
 
 import "@forge-std/Script.sol";
-import "../src/SimpleCoin.sol";
+import "../src/basic-solidity-examples/SimpleCoin.sol";
 
 contract MyScript is Script {
     function run() external {
