@@ -118,7 +118,7 @@ Currently you will find a getter contract that calls the getter methods on the M
 
 ### Preparing Data for Storage
 
-Before storing a file with a storage provider, it needs to be prepared by turning it into a .car file and the metadata must be recorded. To do this, the hardhat kit has a [tool submodule](https://github.com/filecoin-project/fevm-hardhat-kit/tree/main/tools), written in the language Go, which can do this for you. You can also use the [FVM Data Depot website](https://data.lighthouse.storage/) will automatically convert files to the .car format, output all the necessary metadata, and act as an HTTP retrieval point for the storage providers.
+Before storing a file with a storage provider, it needs to be prepared by turning it into a .car file and the metadata must be recorded. To do this locally, you can use [this tool](https://github.com/filecoin-project/fevm-hardhat-kit/tree/main/tools), written in the language Go, which can do this for you. You can also use the [FVM Data Depot website](https://data.lighthouse.storage/) will automatically convert files to the .car format, output all the necessary metadata, and act as an HTTP retrieval point for the storage providers.
 
 ### Client Contract - Making Storage Deals in Solidity
 
