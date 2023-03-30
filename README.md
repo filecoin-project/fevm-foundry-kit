@@ -52,7 +52,6 @@ If you use a .env file, don't commit and push any changes to .env files that may
 
 Go to the [Hyperspace testnet faucet](https://hyperspace.yoga/#faucet), and paste in the Ethereum address from the previous step. This will send some hyperspace testnet FIL to the account.
 
-
 ## Deploy the Contracts
 
 Currently there are 2 main types of contracts:
@@ -104,8 +103,9 @@ You can interact with contracts via forge scripts scripts, found in the 'scripts
 Type in the following command in the terminal:
 
 ```
-forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --verify -vvvv
+forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --skip-simulation
 ```
+
 You can also interact with contracts via the terminal/command line using the [Foundry cast tool](https://book.getfoundry.sh/cast/#overview-of-cast).
 
 ## Filecoin APIs
