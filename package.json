@@ -13,7 +13,8 @@
     "lint:check": "yarn run prettier:check && yarn run solhint:check"
   },
   "dependencies": {
-    "@zondax/filecoin-solidity": "2.0.0-beta.1"
+    "@zondax/filecoin-solidity": "4.0.2",
+    "solidity-cborutils": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^2.5.1",

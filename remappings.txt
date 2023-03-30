@@ -3,3 +3,5 @@
 @forge-std/=lib/forge-std/src/
 @oz/=lib/oz/contracts/
 @zondax/=node_modules/@zondax/
+solidity-cborutils/=node_modules/solidity-cborutils
+@ensdomains/=node_modules/@ensdomains
