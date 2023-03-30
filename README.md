@@ -79,7 +79,7 @@ Deployed to: 0x859723aA05F8B0C10215C31E50d9647AD7c82C82
 Transaction hash: 0x74071603994339f01b745e304c10f1bd97cfba4003d7a447977de1c89b478c7d
 ```
 
-Now try doing the smae with the Deal Client:
+Now try doing the same with the Deal Client:
 
 ```
 forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
@@ -106,6 +106,7 @@ Type in the following command in the terminal:
 ```
 forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --verify -vvvv
 ```
+You can also interact with contracts via the terminal/command line using the [Foundry cast tool](https://book.getfoundry.sh/cast/#overview-of-cast).
 
 ## Filecoin APIs
 
