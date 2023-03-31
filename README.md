@@ -128,17 +128,3 @@ Under contracts, within the `basic-deal-client` sub-directory, you will find a f
 
 Under contracts, within the `filecoin-api-examples` sub-directory, you will find a file called `deal-rewarder.sol`. This is a basic example contract that uses the Filecoin.sol API's to create bounties for specific data to be stored on the Filecoin blockchain. This is intended to be an example to illustrate how you can use the Filecoin APIs to do some cool functionality. To learn more about this contract feel free to [checkout the original Foundry project](https://github.com/lotus-web3/deal-bounty-contract) which includes a detailed readme.
 
-## What's Included
-
-This template already contains submodules & remappings for `ds-test` (assertions for testing), `solmate` (building blocks for contracts) and `forge-std` (layer on top of hevm cheatcodes to improve UX).
-
-Additionally, the testing folder contains `Console.sol` which allows you to console.log values (similar to JS and hardhat), `Hevm.sol` providing an interface to hevm cheatcodes, and `BaseTest.sol` which includes the two contracts above and `stdlib.sol` from `forge-std`. 
-
-## Scripts
-
-`Prettier` and `Solhint` can be run with the commands `yarn prettier` and `yarn solhint`. 
-
-## Inspiration
-
-Inspiration came from previous testing templates such as gakonst's [dapptools template](https://github.com/gakonst/dapptools-template), and current foundry templates by [Frankie](https://github.com/FrankieIsLost/forge-template) and [Abigger](https://github.com/abigger87/foundry-starter). 
-
