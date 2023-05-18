@@ -8,8 +8,8 @@ remappings = [
     "@forge-std/=lib/forge-std/src/",
     "@oz/=lib/oz/contracts/"
 ]
-rpc_endpoints = { hyperspace = '${HYPERSPACE_RPC_URL}' }
-chain_id = 3141
+rpc_endpoints = { calibrationnet = '${CALIBRATIONNET_RPC_URL}' }
+chain_id = 314159
 fuzz_runs = 256
 optimizer = true
 

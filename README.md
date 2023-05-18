@@ -36,7 +36,7 @@ Alternatively, to avoid having to do that every time, create a .env file in the 
 
 ```
 PRIVATE_KEY=abcdef
-HYPERSPACE_RPC_URL=https://api.hyperspace.node.glif.io/rpc/v1
+CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
 ```
 
 and then, open a new terminal and run the following command:
@@ -50,7 +50,7 @@ If you use a .env file, don't commit and push any changes to .env files that may
 
 ## Fund the Deployer Address
 
-Go to the [Hyperspace testnet faucet](https://hyperspace.yoga/#faucet), and paste in the Ethereum address from the previous step. This will send some hyperspace testnet FIL to the account.
+Go to the [Calibrationnet testnet faucet](https://calibrationnet.yoga/#faucet), and paste in the Ethereum address from the previous step. This will send some calibrationnet testnet FIL to the account.
 
 ## Deploy the Contracts
 
@@ -67,10 +67,10 @@ Type in the following command in the terminal to deploy a contract. Keep in mind
 
 ```
 forge build
-forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
 ```
 
-This will deploy the SimpleCoin contract to the Hyperspace testnet. You can find the contract address in the terminal output:
+This will deploy the SimpleCoin contract to the Calibrationnet testnet. You can find the contract address in the terminal output:
 
 ```
 Deployer: 0x42C930A33280a7218bc924732d67dd84D6247Af4
@@ -81,7 +81,7 @@ Transaction hash: 0x74071603994339f01b745e304c10f1bd97cfba4003d7a447977de1c89b47
 Now try doing the same with the Deal Client:
 
 ```
-forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
 ```
 
 A common issue that you may see is a failure due to gas:
@@ -93,7 +93,7 @@ A common issue that you may see is a failure due to gas:
 Simply pass in a higher gas limit to fix this (either via. a higher gas estimate multiplier or a fixed gas limit):
 
 ```
-forge create --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient -g 1000
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient -g 1000
 ```
 
 ## Interact with the Contracts
@@ -103,7 +103,7 @@ You can interact with contracts via forge scripts scripts, found in the 'scripts
 Type in the following command in the terminal:
 
 ```
-forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.hyperspace.node.glif.io/rpc/v1 --broadcast --skip-simulation
+forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.calibration.node.glif.io/rpc/v1 --broadcast --skip-simulation
 ```
 
 You can also interact with contracts via the terminal/command line using the [Foundry cast tool](https://book.getfoundry.sh/cast/#overview-of-cast).
@@ -114,7 +114,7 @@ The primary advantage of the FEVM over other EVM based chains is the ability to 
 
 The library is included in this kit as an NPM package and will automatically be downloaded when you perform the `yarn` command (don't confuse these with the included mocks)!
 
-Currently you will find a getter contract that calls the getter methods on the MarketAPI to get storage deal data and store that data. To do this you will need *dealIDs* which you can [find here on FilFox](https://hyperspace.filfox.info/en/deal).
+Currently you will find a getter contract that calls the getter methods on the MarketAPI to get storage deal data and store that data. To do this you will need *dealIDs* which you can [find here on FilFox](https://calibrationnet.filfox.info/en/deal).
 
 ### Preparing Data for Storage
 
