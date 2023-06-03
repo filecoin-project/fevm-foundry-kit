@@ -114,7 +114,7 @@ The primary advantage of the FEVM over other EVM based chains is the ability to 
 
 The library is included in this kit as an NPM package and will automatically be downloaded when you perform the `yarn` command (don't confuse these with the included mocks)!
 
-Currently you will find a getter contract that calls the getter methods on the MarketAPI to get storage deal data and store that data. To do this you will need *dealIDs* which you can [find here on FilFox](https://calibrationnet.filfox.info/en/deal).
+Currently you will find a getter contract that calls the getter methods on the MarketAPI to get storage deal data and store that data. To do this you will need *dealIDs* which you can [find here on FilFox](https://calibration.filfox.info/en/deal).
 
 ### Preparing Data for Storage
 
