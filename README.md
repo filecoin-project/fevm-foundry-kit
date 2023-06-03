@@ -50,7 +50,7 @@ If you use a .env file, don't commit and push any changes to .env files that may
 
 ## Fund the Deployer Address
 
-Go to the [Calibrationnet testnet faucet](https://calibrationnet.yoga/#faucet), and paste in the Ethereum address from the previous step. This will send some calibrationnet testnet FIL to the account.
+Go to the [Calibrationnet testnet faucet](https://faucet.calibration.fildev.network), and paste in the Ethereum address from the previous step. This will send some calibrationnet testnet FIL to the account.
 
 ## Deploy the Contracts
 
