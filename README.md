@@ -108,6 +108,24 @@ forge script script/SimpleCoin.s.sol:MyScript --rpc-url https://api.calibration.
 
 You can also interact with contracts via the terminal/command line using the [Foundry cast tool](https://book.getfoundry.sh/cast/#overview-of-cast).
 
+## Empty Transaction Reciepts
+Some users are facing the issue of an empty receipt for your txn on testnet but the txn shows that it has gone through successfully on explorers.
+```
+Error: 
+Received an empty receipt for 0xe661e7a4e5ec511c93c2b966ae382da9267c5ad217d9b5ec75de3ce3ab848608
+```
+
+OR facing an error message that txn has dropped from mempool, but again, txn shows up on explorer.
+
+```
+Error: 
+Transaction dropped from the mempool: 0x9b293d053a0c148677b46425f143fd46dd58d13b47251208d68c458653f30038
+```
+
+Try these fixes:
+- Increase the amount of times for retrying the tx, perhaps through the `—resume` flag. Ideally setting it to ~10, which you can specify with `--retries`. 
+- Alternatively, try using ethers-rs to handle contract transactions. there is a [send_tx](https://github.com/filecoin-saturn/rs-fevm-utils/blob/5c850005bbe50d7547d2585173ab2bd39c47c011/src/lib.rs#LL215C4-L215C4) function in there that allows you to override the default no of retries.
+
 ## Filecoin APIs
 
 The primary advantage of the FEVM over other EVM based chains is the ability to access and program around Filecoin storage deals. This can be done in the FEVM via the [Filecoin.sol library maintained by Zondax](https://github.com/Zondax/filecoin-solidity). **Note this library is currently in BETA**. It is unaudited, and the APIs will likely be changing with time. This repo will be updated as soon as possible when a breaking change occurs.
