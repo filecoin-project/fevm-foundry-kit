@@ -12,7 +12,7 @@ Open up your terminal (or command prompt) and navigate to a directory you would 
 
 
 ```
-git clone https://github.com/xBalbinus/fevm-foundry-kit
+git clone https://github.com/filecoin-project/fevm-foundry-kit
 cd fevm-foundry-kit
 yarn install
 ```
