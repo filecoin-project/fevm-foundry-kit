@@ -37,7 +37,7 @@ Alternatively, to avoid having to do that every time, create a .env file in the 
 
 ```
 PRIVATE_KEY=abcdef
-CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v0
 ```
 
 and then, open a new terminal and run the following command:
@@ -68,7 +68,7 @@ Type in the following command in the terminal to deploy a contract. Keep in mind
 
 ```
 forge build
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v0 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
 ```
 
 This will deploy the SimpleCoin contract to the Calibrationnet testnet. You can find the contract address in the terminal output:
@@ -82,7 +82,7 @@ Transaction hash: 0x74071603994339f01b745e304c10f1bd97cfba4003d7a447977de1c89b47
 Now try doing the same with the Deal Client:
 
 ```
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v0 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
 ```
 
 A common issue that you may see is a failure due to gas:
