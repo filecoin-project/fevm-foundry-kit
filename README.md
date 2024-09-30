@@ -6,6 +6,7 @@ This is a template for foundry that provides the basic scaffolding for quickly g
 
 You can find the instructions to download Foundry in the [official Foundry repo](https://github.com/foundry-rs/foundry#installation). 
 
+
 ## Cloning the Repo
 
 Open up your terminal (or command prompt) and navigate to a directory you would like to store this code on. Once there type in the following command:
@@ -36,7 +37,7 @@ Alternatively, to avoid having to do that every time, create a .env file in the 
 
 ```
 PRIVATE_KEY=abcdef
-CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v1
+CALIBRATIONNET_RPC_URL=https://api.calibration.node.glif.io/rpc/v0
 ```
 
 and then, open a new terminal and run the following command:
@@ -67,7 +68,7 @@ Type in the following command in the terminal to deploy a contract. Keep in mind
 
 ```
 forge build
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v0 --private-key $PRIVATE_KEY --contracts /src/SimpleCoin.sol SimpleCoin
 ```
 
 This will deploy the SimpleCoin contract to the Calibrationnet testnet. You can find the contract address in the terminal output:
@@ -81,7 +82,7 @@ Transaction hash: 0x74071603994339f01b745e304c10f1bd97cfba4003d7a447977de1c89b47
 Now try doing the same with the Deal Client:
 
 ```
-forge create --rpc-url https://api.calibration.node.glif.io/rpc/v1 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
+forge create --rpc-url https://api.calibration.node.glif.io/rpc/v0 --private-key $PRIVATE_KEY --contracts src/client-contract/DealClient.sol DealClient
 ```
 
 A common issue that you may see is a failure due to gas:
@@ -125,6 +126,9 @@ Transaction dropped from the mempool: 0x9b293d053a0c148677b46425f143fd46dd58d13b
 Try these fixes:
 - Increase the amount of times for retrying the tx, perhaps through the `—resume` flag. Ideally setting it to ~10, which you can specify with `--retries`. 
 - Alternatively, try using ethers-rs to handle contract transactions. there is a [send_tx](https://github.com/filecoin-saturn/rs-fevm-utils/blob/5c850005bbe50d7547d2585173ab2bd39c47c011/src/lib.rs#LL215C4-L215C4) function in there that allows you to override the default no of retries.
+
+## Check the RPC URL status 
+https://api.calibration.node.glif.io/
 
 ## Filecoin APIs
 
