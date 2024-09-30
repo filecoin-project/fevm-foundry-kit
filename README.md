@@ -6,6 +6,7 @@ This is a template for foundry that provides the basic scaffolding for quickly g
 
 You can find the instructions to download Foundry in the [official Foundry repo](https://github.com/foundry-rs/foundry#installation). 
 
+
 ## Cloning the Repo
 
 Open up your terminal (or command prompt) and navigate to a directory you would like to store this code on. Once there type in the following command:
@@ -125,6 +126,9 @@ Transaction dropped from the mempool: 0x9b293d053a0c148677b46425f143fd46dd58d13b
 Try these fixes:
 - Increase the amount of times for retrying the tx, perhaps through the `—resume` flag. Ideally setting it to ~10, which you can specify with `--retries`. 
 - Alternatively, try using ethers-rs to handle contract transactions. there is a [send_tx](https://github.com/filecoin-saturn/rs-fevm-utils/blob/5c850005bbe50d7547d2585173ab2bd39c47c011/src/lib.rs#LL215C4-L215C4) function in there that allows you to override the default no of retries.
+
+## Check the RPC URL status 
+https://api.calibration.node.glif.io/
 
 ## Filecoin APIs
 
