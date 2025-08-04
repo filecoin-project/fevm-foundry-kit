@@ -7,7 +7,7 @@ contract MyScript is Script {
     function run() external {
         // Run this script to get your address
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
-        
+
         address yourAddress = vm.addr(deployerPrivateKey);
 
         console.log(yourAddress);

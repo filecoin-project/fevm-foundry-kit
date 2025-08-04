@@ -1,17 +1,26 @@
 [profile.default]
 src = 'src'
+test = 'test'
+script = 'script'
 out = 'out'
 libs = ['lib']
+cache_path = 'cache'
+solc = "0.8.23"
+via_ir = true
+optimizer = true
+optimizer_runs = 200
+
+# For dependencies
 remappings = [
     "@ds-test/=lib/ds-test/src/",
     "@solmate/=lib/solmate/src/",
     "@forge-std/=lib/forge-std/src/",
-    "@oz/=lib/oz/contracts/"
+    '@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/',
+    '@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/',
+    "filecoin-solidity-api/=lib/filecoin-solidity-api/",
+    "solidity-cborutils/=lib/solidity-cborutils/",
+    "@ensdomains/buffer=lib/ensdomains/"
 ]
-rpc_endpoints = { calibrationnet = '${CALIBRATIONNET_RPC_URL}' }
-chain_id = 314159
-fuzz_runs = 256
-optimizer = true
 
-[profile.default.optimizer_details]
-yul = false
+# Allow reading test data files
+fs_permissions = [{ access = "read", path = "./test" }]

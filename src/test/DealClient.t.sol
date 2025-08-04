@@ -3,17 +3,23 @@ pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
 import "../basic-deal-client/DealClient.sol";
-import { MarketTypes } from "@zondax/filecoin-solidity/contracts/v0.8/types/MarketTypes.sol";
-import {MarketCBOR} from "@zondax/filecoin-solidity/contracts/v0.8/cbor/MarketCbor.sol";
+import { MarketTypes } from "filecoin-solidity-api/contracts/v0.8/types/MarketTypes.sol";
+import { MarketCBOR } from "filecoin-solidity-api/contracts/v0.8/cbor/MarketCbor.sol";
 
 contract MockMarket {
     function publish_deal(bytes memory raw_auth_params, address callee) public {
         // calls standard filecoin receiver on message authentication api method number
-        (bool success, ) = callee.call(abi.encodeWithSignature("handle_filecoin_method(uint64,uint64,bytes)", 0, 2643134072, raw_auth_params));
+        (bool success, ) = callee.call(
+            abi.encodeWithSignature(
+                "handle_filecoin_method(uint64,uint64,bytes)",
+                0,
+                2643134072,
+                raw_auth_params
+            )
+        );
         require(success, "client contract failed to authorize deal publish");
     }
 }
-
 
 contract DealClientTest is Test {
     DealClient public client;
@@ -54,7 +60,6 @@ contract DealClientTest is Test {
         return request;
     }
 
-
     function testMakeDealProposal() public {
         require(client.dealsLength() == 0, "Expect no deals");
         client.makeDealProposal(createDealRequest());
@@ -63,34 +68,47 @@ contract DealClientTest is Test {
         RequestId memory proposalIdSet = client.getProposalIdSet(testCID);
         require(proposalIdSet.valid, "expected to have valid Proposal");
         DealRequest memory deal = client.getDealByIndex(0);
-        require(deal.piece_size == 2048, "unexpected cid size in client after setting");
+        require(
+            deal.piece_size == 2048,
+            "unexpected cid size in client after setting"
+        );
 
         ProviderSet memory providerSet = client.getProviderSet(testCID);
-        require(!providerSet.valid, "should not be valid before a cid is authorized");
+        require(
+            !providerSet.valid,
+            "should not be valid before a cid is authorized"
+        );
 
         // non-added cid has expected state
-        RequestId memory proposalIdSetShort = client.getProposalIdSet(testShortCID);
+        RequestId memory proposalIdSetShort = client.getProposalIdSet(
+            testShortCID
+        );
         require(!proposalIdSetShort.valid, "expected to have valid Proposal");
-        ProviderSet memory providerSetShort = client.getProviderSet(testShortCID);
-        require(!providerSetShort.valid, "should not be valid before a cid is authorized");
-
+        ProviderSet memory providerSetShort = client.getProviderSet(
+            testShortCID
+        );
+        require(
+            !providerSetShort.valid,
+            "should not be valid before a cid is authorized"
+        );
     }
-
 
     function testGetDealProposal() public {
         bytes32 requestId = client.makeDealProposal(createDealRequest());
 
         bytes memory cborDealProposal = client.getDealProposal(requestId);
-        MarketTypes.DealProposal memory dp = MarketCBOR.deserializeDealProposal(cborDealProposal);
+        MarketTypes.DealProposal memory dp = MarketCBOR.deserializeDealProposal(
+            cborDealProposal
+        );
         require(keccak256(testCID) == keccak256(dp.piece_cid.data));
-//        require(dp.provider == FilAddresses.fromActorID(0));
+        //        require(dp.provider == FilAddresses.fromActorID(0));
 
         // Expect a revert for an unknown proposal ID
         vm.expectRevert();
         client.getDealProposal(bytes32(0));
     }
 
-/*
+    /*
 
     function testMockMarket() public {
         client.addCID(testCID, 2048);

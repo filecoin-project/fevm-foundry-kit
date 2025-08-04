@@ -1,9 +1,8 @@
 {
   "name": "foundry-template",
-  "author": "xBalbinus",
   "version": "1.0.0",
   "description": "FEVM Foundry template",
-  "homepage": "https://github.com/xBalbinus/fevm-foundry-kit",
+  "homepage": "https://github.com/filecoin-project/fevm-foundry-kit",
   "scripts": {
     "prettier": "prettier --write 'src/**/*.sol'",
     "prettier:check": "prettier --check 'src/**/*.sol'",
@@ -13,13 +12,10 @@
     "lint:check": "yarn run prettier:check && yarn run solhint:check"
   },
   "dependencies": {
-    "@zondax/filecoin-solidity": "4.0.2",
-    "solidity-cborutils": "^2.0.0"
-  },
-  "devDependencies": {
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.6",
-    "solhint-plugin-prettier": "^0.0.5"
+    "solhint-plugin-prettier": "^0.0.5",
+    "@fil-b/filfox-verifier": "^1.0.3"
   }
 }
