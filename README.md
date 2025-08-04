@@ -17,10 +17,11 @@ Open your terminal (or command prompt) and navigate to the directory where you w
 ```bash
 git clone https://github.com/filecoin-project/fevm-foundry-kit
 cd fevm-foundry-kit
-yarn install
+forge build
+npm install
 ```
 
-This will clone the repository to your computer, navigate to the newly created directory, and install the required dependencies.
+This will clone the repository to your computer, navigate to the newly created directory, install the required dependencies, build the project and compile the contracts.
 
 ### Set Up Your Private Key
 
@@ -60,14 +61,6 @@ This kit includes three main types of contracts:
 - **Basic Solidity Examples**: Simple contracts demonstrating basic Solidity functionality
 - **Filecoin API Examples**: Contracts that demonstrate how to use Filecoin APIs in Solidity to access storage deals and other Filecoin-specific functions
 - **Basic Deal Client**: A contract that demonstrates how to create Filecoin storage deals within Solidity smart contracts
-
-### Build the Project
-
-First, build the project and compile the contracts:
-
-```bash
-forge build
-```
 
 ### Deploy to Calibrationnet (Testnet)
 
@@ -205,7 +198,7 @@ Transaction dropped from the mempool: 0x9b293d053a0c148677b46425f143fd46dd58d13b
 
 The primary advantage of the FEVM over other EVM-based chains is the ability to access and program around Filecoin storage deals. This can be done in the FEVM via the [Filecoin.sol library maintained by Zondax](https://github.com/Zondax/filecoin-solidity). **Note this library is currently in BETA**. It is unaudited, and the APIs will likely be changing with time. This repo will be updated as soon as possible when a breaking change occurs.
 
-The library is included in this kit as an NPM package and will be automatically downloaded when you run the `yarn` command (don't confuse this with the included mocks).
+The library is included in this kit as a submodule and will be automatically downloaded when you run the `forge build` command (don't confuse this with the included mocks).
 
 Currently, you'll find a getter contract that calls the getter methods on the MarketAPI to retrieve and store storage deal data. To use this, you'll need *dealIDs* which you can [find on FilFox](https://calibration.filfox.info/en/deal).
 
